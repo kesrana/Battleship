@@ -4,7 +4,6 @@ from pygame.locals import *
 from button import Button
 import random
 
-import stage1, stage2, stage3
 from constant import screen_width, screen_height
 
 pygame.init()
@@ -24,7 +23,7 @@ GRID_WIDTH = 10
 GRID_HEIGHT = 10
 CELL_SIZE = 50
 
-ASSET_PATH = "/Users/kesleyrana/Documents/VSCode/CMPT276/Quetzal_CMPT276/Phase3/assets/"
+ASSET_PATH = "assets/"
 
 # hard code to let mouse click
 mouse_pos = (720, 200)  # mouse click position
@@ -629,20 +628,20 @@ class Game:
                 return move
         return ""
 
-    def handle_stage_events(self, event):
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            mouse_pos = pygame.mouse.get_pos()
-            for button in self.buttons:
-                if button.checkForInput(mouse_pos):
-                    if button.text_input == "Level 1":
-                        pygame.display.set_mode((screen_width, screen_height))
-                        stage1.main()
-                    if button.text_input == "Level 2":
-                        pygame.display.set_mode((screen_width, screen_height))
-                        stage2.main()
-                    if button.text_input == "Level 3":
-                        pygame.display.set_mode((screen_width, screen_height))
-                        stage3.main()
+    # def handle_stage_events(self, event):
+    #     if event.type == pygame.MOUSEBUTTONDOWN:
+    #         mouse_pos = pygame.mouse.get_pos()
+    #         for button in self.buttons:
+    #             if button.checkForInput(mouse_pos):
+    #                 if button.text_input == "Level 1":
+    #                     pygame.display.set_mode((screen_width, screen_height))
+    #                     stage1.main()
+    #                 if button.text_input == "Level 2":
+    #                     pygame.display.set_mode((screen_width, screen_height))
+    #                     stage2.main()
+    #                 if button.text_input == "Level 3":
+    #                     pygame.display.set_mode((screen_width, screen_height))
+    #                     stage3.main()
 
     def update_stage(self):
         self.buttons = [
@@ -686,8 +685,6 @@ class Game:
                     if button.text_input == "Classic":
                         self.state = GameState.PLAYING
                         self.create_game_board()
-                    if button.text_input == "New Mode":
-                        self.state = GameState.STAGE
 
     def update_switcher(self):
         self.buttons = [
@@ -697,12 +694,6 @@ class Game:
                    font=get_font(DEFAULT_FONT_SIZE),
                    base_color="Black",
                    hovering_color="Green"),
-            Button(image=pygame.image.load(ASSET_PATH + "Options Rect.png"),
-                   pos=(640, 560),
-                   text_input="New Mode",
-                   font=get_font(DEFAULT_FONT_SIZE),
-                   base_color="Black",
-                   hovering_color="Green")
         ]
 
     def render_switcher(self):

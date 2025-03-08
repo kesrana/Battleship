@@ -12,11 +12,3 @@ white = (255,255,255)
 bottom_panel = 250
 screen_width = 1600
 screen_height = 650 + bottom_panel
-
-#ship costs
-ship_costs = {
-    'etank': 100,   # Example cost for etank ship
-    'edps': 150,    # Example cost for edps ship
-    # Add more ship types and their costs
-}
-
