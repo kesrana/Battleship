@@ -3,6 +3,8 @@
 ![image](https://github.com/user-attachments/assets/0ccb510e-fe6e-4cbf-b3d0-c860bb097469)
 
 
+![GIF](https://github.com/kesrana/Battleship/blob/main/Battleship.gif)
+
 
 Overview
 
